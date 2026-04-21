@@ -1,0 +1,1097 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta
+    name="description"
+    content="Flexo Vision comercializa impresoras Epson SureColor e insumos para cromalines perfilados en flexografía y offset, junto con papel certificado por GMG y SKO."
+  >
+  <title>Flexo Vision | Insumos para Cromalines</title>
+  <style>
+    /* Base visual:
+       Esta web fue armada como landing responsive para Flexo Vision.
+       El foco comercial actual esta puesto en FLEXOGRAFIA, impresoras Epson,
+       insumos para cromalines y papel certificado. */
+    :root {
+      --bg: #eef3f8;
+      --surface: rgba(255, 255, 255, 0.9);
+      --surface-strong: #ffffff;
+      --ink: #0f1720;
+      --muted: #526070;
+      --line: rgba(15, 23, 32, 0.09);
+      --blue: #0a66c2;
+      --blue-deep: #083a6c;
+      --cyan: #3dc3d6;
+      --gold: #d9a441;
+      --shadow: 0 20px 60px rgba(8, 36, 67, 0.14);
+      --radius-xl: 28px;
+      --radius-lg: 22px;
+      --radius-md: 16px;
+      --max: 1180px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top left, rgba(61, 195, 214, 0.20), transparent 32%),
+        radial-gradient(circle at 85% 15%, rgba(10, 102, 194, 0.18), transparent 26%),
+        linear-gradient(180deg, #f7fbff 0%, #eef3f8 100%);
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .shell {
+      width: min(calc(100% - 2rem), var(--max));
+      margin: 0 auto;
+    }
+
+    /* Encabezado fijo con acceso rapido a las secciones principales. */
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(16px);
+      background: rgba(247, 251, 255, 0.84);
+      border-bottom: 1px solid rgba(15, 23, 32, 0.06);
+    }
+
+    .topbar .shell {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 1rem 0;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.9rem;
+    }
+
+    .brand-mark {
+      width: 46px;
+      height: 46px;
+      border-radius: 14px;
+      background:
+        linear-gradient(135deg, var(--blue-deep), var(--blue) 45%, var(--cyan));
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .brand-mark::before,
+    .brand-mark::after {
+      content: "";
+      position: absolute;
+      inset: auto;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.88);
+    }
+
+    .brand-mark::before {
+      width: 26px;
+      height: 8px;
+      left: 10px;
+      top: 13px;
+      transform: rotate(-18deg);
+    }
+
+    .brand-mark::after {
+      width: 18px;
+      height: 6px;
+      left: 14px;
+      top: 24px;
+      transform: rotate(-18deg);
+    }
+
+    .brand-copy strong {
+      display: block;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.25rem;
+      letter-spacing: 0.02em;
+    }
+
+    .brand-copy span {
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+
+    .nav a:hover {
+      color: var(--blue-deep);
+    }
+
+    /* Hero principal:
+       Resume la propuesta de valor y muestra la impresora completa sin recorte. */
+    .hero {
+      padding: 3.8rem 0 2.5rem;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.08fr 0.92fr;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      padding: 0.45rem 0.9rem;
+      border-radius: 999px;
+      background: rgba(10, 102, 194, 0.09);
+      color: var(--blue-deep);
+      font-size: 0.88rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .focus-word {
+      color: var(--blue-deep);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
+      margin: 1rem 0 1rem;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(2.5rem, 6vw, 4.75rem);
+      line-height: 0.98;
+      letter-spacing: -0.03em;
+    }
+
+    .hero p {
+      max-width: 62ch;
+      margin: 0 0 1.6rem;
+      font-size: 1.05rem;
+      line-height: 1.75;
+      color: var(--muted);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.85rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.55rem;
+      min-height: 50px;
+      padding: 0 1.3rem;
+      border-radius: 999px;
+      font-weight: 700;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+    }
+
+    .btn-primary {
+      color: #fff;
+      background: linear-gradient(135deg, var(--blue-deep), var(--blue));
+      box-shadow: 0 16px 34px rgba(10, 102, 194, 0.25);
+    }
+
+    .btn-secondary {
+      color: var(--blue-deep);
+      background: rgba(255, 255, 255, 0.86);
+      border: 1px solid rgba(10, 102, 194, 0.12);
+    }
+
+    .hero-points {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.9rem;
+    }
+
+    .point {
+      padding: 1rem;
+      border-radius: var(--radius-md);
+      background: rgba(255, 255, 255, 0.8);
+      border: 1px solid rgba(15, 23, 32, 0.06);
+      box-shadow: var(--shadow);
+    }
+
+    .point strong {
+      display: block;
+      font-size: 1.35rem;
+      margin-bottom: 0.25rem;
+      color: var(--blue-deep);
+    }
+
+    .point span {
+      color: var(--muted);
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+
+    .hero-visual {
+      position: relative;
+    }
+
+    .hero-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: var(--radius-xl);
+      background: linear-gradient(160deg, #0f1720, #16283d 42%, #0a66c2 110%);
+      padding: 1.15rem;
+      box-shadow: var(--shadow);
+    }
+
+    .hero-card img {
+      width: 100%;
+      height: min(62vw, 540px);
+      object-fit: contain;
+      object-position: center;
+      border-radius: calc(var(--radius-xl) - 10px);
+      background: #f4f4f4;
+    }
+
+    .floating-note {
+      position: absolute;
+      right: -0.6rem;
+      bottom: 1.2rem;
+      width: min(260px, 72%);
+      padding: 1rem 1.05rem;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.95);
+      border: 1px solid rgba(15, 23, 32, 0.06);
+      box-shadow: 0 22px 46px rgba(9, 30, 53, 0.22);
+    }
+
+    .floating-note strong {
+      display: block;
+      margin-bottom: 0.35rem;
+      color: var(--blue-deep);
+    }
+
+    .floating-note span {
+      color: var(--muted);
+      font-size: 0.93rem;
+      line-height: 1.5;
+    }
+
+    section {
+      padding: 1.6rem 0 2.4rem;
+    }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      align-items: end;
+      margin-bottom: 1.4rem;
+    }
+
+    .section-head h2 {
+      margin: 0 0 0.45rem;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(1.9rem, 3vw, 2.8rem);
+      letter-spacing: -0.03em;
+    }
+
+    .section-head p {
+      margin: 0;
+      max-width: 60ch;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    /* Grillas de producto:
+       Se usan para destacar primero la Epson P9570 y luego el papel sin OBA. */
+    .products {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.35rem;
+    }
+
+    /* Seccion de tintas:
+       Documenta visualmente los cartuchos y los codigos 700 mL tomados
+       desde la ficha tecnica corregida provista por el usuario. */
+    .ink-section {
+      display: grid;
+      grid-template-columns: 1.02fr 0.98fr;
+      gap: 1.35rem;
+      align-items: start;
+    }
+
+    .ink-layout {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .ink-gallery {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .ink-gallery figure {
+      margin: 0;
+      overflow: hidden;
+      border-radius: 20px;
+      border: 1px solid rgba(15, 23, 32, 0.08);
+      background: #fff;
+      box-shadow: var(--shadow);
+    }
+
+    .ink-gallery img {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+    }
+
+    .ink-gallery figcaption {
+      padding: 0.9rem 1rem 1rem;
+      color: var(--muted);
+      font-size: 0.94rem;
+      line-height: 1.5;
+    }
+
+    .ink-table-wrap {
+      padding: 1.2rem;
+      border-radius: var(--radius-lg);
+      background: rgba(255, 255, 255, 0.9);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+    }
+
+    .ink-table {
+      width: 100%;
+      border-collapse: collapse;
+      overflow: hidden;
+      border-radius: 16px;
+    }
+
+    .ink-table th,
+    .ink-table td {
+      padding: 0.85rem 0.8rem;
+      text-align: left;
+      border-bottom: 1px solid rgba(15, 23, 32, 0.08);
+      font-size: 0.95rem;
+    }
+
+    .ink-table th {
+      color: var(--blue-deep);
+      background: rgba(10, 102, 194, 0.07);
+      font-size: 0.88rem;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+    }
+
+    .ink-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .ink-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-weight: 700;
+    }
+
+    .ink-dot {
+      width: 0.8rem;
+      height: 0.8rem;
+      border-radius: 999px;
+      box-shadow: inset 0 0 0 1px rgba(15, 23, 32, 0.18);
+    }
+
+    .card {
+      position: relative;
+      overflow: hidden;
+      border-radius: var(--radius-lg);
+      background: var(--surface);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+    }
+
+    .product-media {
+      aspect-ratio: 16 / 10;
+      overflow: hidden;
+      background: linear-gradient(135deg, #dce7f2, #f7fbff);
+    }
+
+    .product-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .product-body {
+      padding: 1.45rem;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      margin-bottom: 0.85rem;
+      padding: 0.35rem 0.7rem;
+      border-radius: 999px;
+      background: rgba(10, 102, 194, 0.08);
+      color: var(--blue-deep);
+      font-size: 0.83rem;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+    }
+
+    .product-body h3 {
+      margin: 0 0 0.75rem;
+      font-size: 1.45rem;
+    }
+
+    .product-body p {
+      margin: 0 0 1rem;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .list {
+      display: grid;
+      gap: 0.65rem;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .list li {
+      position: relative;
+      padding-left: 1.2rem;
+      color: #223245;
+      line-height: 1.6;
+    }
+
+    .list li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.72rem;
+      width: 0.46rem;
+      height: 0.46rem;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--blue), var(--cyan));
+    }
+
+    .paper-accent {
+      min-height: 250px;
+      display: grid;
+      place-items: center;
+      padding: 1.5rem;
+      background:
+        linear-gradient(135deg, rgba(217, 164, 65, 0.14), rgba(61, 195, 214, 0.12)),
+        linear-gradient(160deg, #ffffff, #eef5fb);
+    }
+
+    .sheet-stack {
+      width: min(270px, 88%);
+      aspect-ratio: 5 / 4;
+      position: relative;
+    }
+
+    .sheet-stack span {
+      position: absolute;
+      inset: 0;
+      border-radius: 22px;
+      border: 1px solid rgba(15, 23, 32, 0.08);
+      background: linear-gradient(180deg, #ffffff, #f4f6f8);
+      box-shadow: 0 22px 40px rgba(16, 32, 48, 0.08);
+    }
+
+    .sheet-stack span:nth-child(1) {
+      transform: rotate(-8deg) translate(-18px, 18px);
+    }
+
+    .sheet-stack span:nth-child(2) {
+      transform: rotate(5deg) translate(18px, 10px);
+    }
+
+    .sheet-stack span:nth-child(3) {
+      display: grid;
+      place-items: center;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.3rem;
+      color: var(--blue-deep);
+      text-align: center;
+      padding: 1.5rem;
+    }
+
+    .applications {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .application-card {
+      padding: 1.4rem;
+      border-radius: var(--radius-md);
+      background: rgba(255, 255, 255, 0.78);
+      border: 1px solid rgba(15, 23, 32, 0.06);
+      box-shadow: var(--shadow);
+    }
+
+    .application-card strong {
+      display: block;
+      margin-bottom: 0.55rem;
+      font-size: 1.1rem;
+    }
+
+    .application-card p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    /* Certificaciones:
+       Refuerza el mensaje comercial sobre papel certificado y respaldo tecnico. */
+    .cert-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.35rem;
+      align-items: center;
+    }
+
+    .cert-copy {
+      padding: 1.7rem;
+      border-radius: var(--radius-lg);
+      background: linear-gradient(135deg, #ffffff, rgba(255, 255, 255, 0.82));
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+    }
+
+    .cert-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      margin: 1rem 0 0;
+    }
+
+    .badge {
+      padding: 0.8rem 1rem;
+      border-radius: 14px;
+      background: #f3f8fe;
+      color: var(--blue-deep);
+      font-weight: 700;
+      border: 1px solid rgba(10, 102, 194, 0.12);
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .gallery figure {
+      margin: 0;
+      overflow: hidden;
+      border-radius: 20px;
+      border: 1px solid rgba(15, 23, 32, 0.08);
+      box-shadow: var(--shadow);
+      background: #fff;
+    }
+
+    .gallery img {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+    }
+
+    .gallery figcaption {
+      padding: 0.9rem 1rem 1rem;
+      color: var(--muted);
+      line-height: 1.5;
+      font-size: 0.94rem;
+    }
+
+    /* Cierre comercial:
+       Actualmente se usa para reforzar productos clave y abrir la puerta
+       a consultas por otras impresoras e insumos. */
+    .cta {
+      padding-bottom: 4rem;
+    }
+
+    .cta-box {
+      padding: 2rem;
+      border-radius: 30px;
+      color: #fff;
+      background:
+        linear-gradient(135deg, rgba(8, 58, 108, 0.98), rgba(10, 102, 194, 0.92)),
+        linear-gradient(135deg, rgba(61, 195, 214, 0.25), transparent);
+      box-shadow: 0 28px 56px rgba(8, 58, 108, 0.28);
+    }
+
+    .cta-box h2 {
+      margin: 0 0 0.8rem;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      letter-spacing: -0.03em;
+    }
+
+    .cta-box p {
+      margin: 0 0 1.4rem;
+      max-width: 68ch;
+      line-height: 1.75;
+      color: rgba(255, 255, 255, 0.88);
+    }
+
+    .cta-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      color: rgba(255, 255, 255, 0.88);
+    }
+
+    .cta-meta span {
+      padding: 0.72rem 0.95rem;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+    }
+
+    footer {
+      padding: 0 0 2.4rem;
+      color: var(--muted);
+    }
+
+    .footer-line {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(15, 23, 32, 0.08);
+      font-size: 0.94rem;
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid,
+      .cert-grid,
+      .products,
+      .ink-section,
+      .applications,
+      .gallery {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-points {
+        grid-template-columns: 1fr;
+      }
+
+      .section-head,
+      .footer-line {
+        flex-direction: column;
+        align-items: start;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .topbar .shell {
+        flex-direction: column;
+        align-items: start;
+      }
+
+      .nav {
+        flex-wrap: wrap;
+        gap: 0.8rem 1rem;
+      }
+
+      .hero {
+        padding-top: 2.6rem;
+      }
+
+      .floating-note {
+        position: static;
+        width: 100%;
+        margin-top: 1rem;
+      }
+
+      .hero-card {
+        padding: 0.8rem;
+      }
+
+      .hero-card img {
+        height: auto;
+        aspect-ratio: 4 / 3;
+        object-fit: contain;
+      }
+
+      .cta-box,
+      .cert-copy,
+      .card,
+      .application-card,
+      .ink-table-wrap {
+        border-radius: 22px;
+      }
+
+      .ink-gallery {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .shell {
+        width: min(calc(100% - 1.2rem), var(--max));
+      }
+
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+
+      .btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Encabezado de navegacion principal. -->
+  <header class="topbar">
+    <div class="shell">
+      <a class="brand" href="#inicio" aria-label="Flexo Vision">
+        <div class="brand-mark" aria-hidden="true"></div>
+        <div class="brand-copy">
+          <strong>Flexo Vision</strong>
+          <span>Insumos para cromalines de FLEXOGRAFIA y offset</span>
+        </div>
+      </a>
+      <nav class="nav" aria-label="Principal">
+        <a href="#productos">Productos</a>
+        <a href="#aplicaciones">Aplicaciones</a>
+        <a href="#certificaciones">Certificaciones</a>
+        <a href="#ficha">Ficha técnica</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Bloque principal de impacto comercial. -->
+    <section class="hero" id="inicio">
+      <div class="shell hero-grid">
+        <div>
+          <span class="eyebrow"><span class="focus-word">Flexografia</span> y offset</span>
+          <h1>Impresoras e insumos para cromalines con calidad certificada.</h1>
+          <p>
+            Flexo Vision se especializa en soluciones para impresión de cromalines perfilados,
+            con foco en impresoras Epson SureColor, insumos de alto rendimiento y papel sin
+            abrillantador óptico para pruebas confiables y consistentes.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#productos">Ver productos destacados</a>
+            <a class="btn btn-secondary" href="Ficha_Tecnica_Epson_SureColor_P9570_Corregida.pdf" id="ficha">Abrir ficha técnica P9570</a>
+          </div>
+          <div class="hero-points">
+            <article class="point">
+              <strong>EPSON</strong>
+              <span>Serie SureColor para entornos donde la precisión de color es prioritaria.</span>
+            </article>
+            <article class="point">
+              <strong>GMG / SKO</strong>
+              <span>Papel orientado a cromalines con calidad certificada y respaldo técnico.</span>
+            </article>
+            <article class="point">
+              <strong>Mejor costo</strong>
+              <span>Propuesta enfocada en calidad profesional al mejor precio posible.</span>
+            </article>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="hero-card">
+            <!-- Foto principal:
+                 Se deja la impresora completa visible usando object-fit contain. -->
+            <img src="1.jpg" alt="Impresora Epson SureColor para cromalines">
+          </div>
+          <div class="floating-note">
+            <strong>Primer foco comercial</strong>
+            <span>
+              Al ingresar, el visitante entiende rápido que Flexo Vision vende impresoras,
+              insumos y papel certificado para cromalines en <span class="focus-word">flexografia</span> y offset.
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Primer bloque de productos destacados del sitio. -->
+    <section id="productos">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <h2>Productos principales</h2>
+            <p>
+              La primera etapa del sitio pone el foco en los dos productos clave del catálogo:
+              la impresora Epson SureColor P9570 y el papel sin abrillantador óptico para cromalines.
+            </p>
+          </div>
+        </div>
+
+        <div class="products">
+          <article class="card">
+            <div class="product-media">
+              <img src="p7570-product-55_1500x1000.jpg" alt="Detalle de Epson SureColor P9570">
+            </div>
+            <div class="product-body">
+              <span class="tag">Producto destacado</span>
+              <h3>Epson SureColor P9570</h3>
+              <p>
+                Equipo orientado a flujos de trabajo donde la estabilidad de color, la presentación
+                profesional y la confiabilidad en pruebas impresas son esenciales.
+              </p>
+              <ul class="list">
+                <li>Ideal para cromalines perfilados en <span class="focus-word">flexografia</span> y offset.</li>
+                <li>Solución pensada para estudios de color, preprensa y trabajos con calidad certificada.</li>
+                <li>Respaldada con ficha técnica descargable para evaluación comercial.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="paper-accent" aria-hidden="true">
+              <div class="sheet-stack">
+                <span></span>
+                <span></span>
+                <span>Papel premium<br>OBA Free</span>
+              </div>
+            </div>
+            <div class="product-body">
+              <span class="tag">Consumible premium</span>
+              <h3>Papel sin abrillantador óptico</h3>
+              <p>
+                Papel de alta calidad para cromalines, elegido para quienes necesitan un soporte
+                estable, profesional y alineado con exigencias de certificación.
+              </p>
+              <ul class="list">
+                <li>Sin abrillantador óptico para una lectura de color más consistente.</li>
+                <li>Certificaciones asociadas a GMG y SKO.</li>
+                <li>Propuesta de valor: mejor calidad al mejor precio.</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Aplicaciones principales donde se quiere posicionar la empresa. -->
+    <section id="aplicaciones">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <h2>¿Para qué sirve esta solución?</h2>
+            <p>
+              La página comunica de forma directa el uso principal de los productos, para que el
+              cliente correcto se identifique de inmediato con la propuesta de Flexo Vision.
+            </p>
+          </div>
+        </div>
+
+        <div class="applications">
+          <article class="application-card">
+            <strong>Cromalines con calidad certificada</strong>
+            <p>
+              Materiales orientados a cromalines que exigen consistencia y previsibilidad antes de
+              pasar a producción.
+            </p>
+          </article>
+          <article class="application-card">
+            <strong>Flexografía</strong>
+            <p>
+              Soluciones para entornos donde el control visual del color y la repetibilidad son parte
+              del flujo técnico y comercial.
+            </p>
+          </article>
+          <article class="application-card">
+            <strong>Offset</strong>
+            <p>
+              Soporte para procesos que requieren presentar pruebas impresas con aspecto profesional
+              y respaldo técnico.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tintas UltraChrome PRO12:
+         Los codigos de 700 mL fueron extraidos de:
+         Ficha_Tecnica_Epson_SureColor_P9570_Corregida.pdf -->
+    <section id="tintas">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <h2>Tintas Epson UltraChrome PRO12</h2>
+            <p>
+              Según la ficha técnica corregida de la Epson SureColor P9570, la línea utiliza 12 colores y
+              cuenta con referencias específicas por capacidad. A continuación se muestran los códigos de
+              cartucho de <strong>700 mL</strong> junto con fotos de los cartuchos del equipo.
+            </p>
+          </div>
+        </div>
+
+        <div class="ink-section">
+          <div class="ink-layout">
+            <div class="ink-gallery">
+              <figure>
+                <img src="COLORES.jpg" alt="Cartuchos Epson SureColor P9570 lado izquierdo">
+                <figcaption>Vista de cartuchos Epson UltraChrome PRO12 con identificación visual por color.</figcaption>
+              </figure>
+              <figure>
+                <img src="COLORES 2.jpg" alt="Cartuchos Epson SureColor P9570 lado derecho">
+                <figcaption>Banco adicional de consumibles para la Epson SureColor P9570.</figcaption>
+              </figure>
+            </div>
+          </div>
+
+          <div class="ink-table-wrap">
+            <table class="ink-table" aria-label="Códigos de tintas Epson de 700 mL">
+              <thead>
+                <tr>
+                  <th>Color</th>
+                  <th>Código 700 mL</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><span class="ink-chip"><span class="ink-dot" style="background:#1d1d1d;"></span>Photo Black</span></td>
+                  <td>T44H120</td>
+                </tr>
+                <tr>
+                  <td><span class="ink-chip"><span class="ink-dot" style="background:#00a7e6;"></span>Cyan</span></td>
+                  <td>T44H220</td>
+                </tr>
+                <tr>
+                  <td><span class="ink-chip"><span class="ink-dot" style="background:#d60084;"></span>Vivid Magenta</span></td>
+                  <td>T44H320</td>
+                </tr>
+                <tr>
+                  <td><span class="ink-chip"><span class="ink-dot" style="background:#f2d200;"></span>Yellow</span></td>
+                  <td>T44H420</td>
+                </tr>
+                <tr>
+                  <td><span class="ink-chip"><span class="ink-dot" style="background:#8ad8f8;"></span>Light Cyan</span></td>
+                  <td>T44H520</td>
+                </tr>
+                <tr>
+                  <td><span class="ink-chip"><span class="ink-dot" style="background:#ff8abf;"></span>Vivid Light Magenta</span></td>
+                  <td>T44H620</td>
+                </tr>
+                <tr>
+                  <td><span class="ink-chip"><span class="ink-dot" style="background:#7f8790;"></span>Gray</span></td>
+                  <td>T44H720</td>
+                </tr>
+                <tr>
+                  <td><span class="ink-chip"><span class="ink-dot" style="background:#343434;"></span>Matte Black</span></td>
+                  <td>T44H820</td>
+                </tr>
+                <tr>
+                  <td><span class="ink-chip"><span class="ink-dot" style="background:#c3c7cc;"></span>Light Gray</span></td>
+                  <td>T44H920</td>
+                </tr>
+                <tr>
+                  <td><span class="ink-chip"><span class="ink-dot" style="background:#f28b00;"></span>Orange</span></td>
+                  <td>T44HA20</td>
+                </tr>
+                <tr>
+                  <td><span class="ink-chip"><span class="ink-dot" style="background:#2fa84f;"></span>Green</span></td>
+                  <td>T44HB20</td>
+                </tr>
+                <tr>
+                  <td><span class="ink-chip"><span class="ink-dot" style="background:#6e3bbf;"></span>Violet</span></td>
+                  <td>T44HD20</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seccion de certificaciones y soporte visual de consumibles. -->
+    <section id="certificaciones">
+      <div class="shell cert-grid">
+        <div class="cert-copy">
+          <span class="eyebrow">Confianza técnica</span>
+          <h2>Materiales pensados para estándares exigentes.</h2>
+          <p>
+            El papel ofrecido por Flexo Vision se presenta como una opción premium para cromalines,
+            sin abrillantador óptico y con foco en certificaciones reconocidas dentro del sector.
+          </p>
+          <div class="cert-badges">
+            <span class="badge">Certificación GMG</span>
+            <span class="badge">Certificación SKO</span>
+            <span class="badge">Soporte para cromalines</span>
+          </div>
+        </div>
+
+        <div class="gallery">
+          <figure>
+            <img src="COLORES.jpg" alt="Detalle de tintas Epson en impresora">
+            <figcaption>Insumos y sistema de color diseñados para entornos gráficos exigentes.</figcaption>
+          </figure>
+          <figure>
+            <img src="COLORES 2.jpg" alt="Vista adicional de cartuchos Epson">
+            <figcaption>Componentes preparados para mantener continuidad y estabilidad operativa.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- Llamado final a la accion comercial. -->
+    <section class="cta">
+      <div class="shell">
+        <div class="cta-box">
+          <h2>Flexo Vision pone primero el producto y la confianza técnica.</h2>
+          <p>
+            Esta primera versión de la web está pensada para presentar con claridad qué vende la empresa:
+            impresoras para cromalines, insumos para impresión profesional y papel premium certificado
+            para <span class="focus-word">flexografia</span> y offset.
+          </p>
+          <div class="cta-meta">
+            <span>Epson SureColor P9570</span>
+            <span>Papel sin OBA</span>
+            <span>Consulta por otras impresoras e insumos</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="shell footer-line">
+      <span>Flexo Vision</span>
+      <span>Especialistas en insumos para cromalines de FLEXOGRAFIA y offset.</span>
+    </div>
+  </footer>
+</body>
+</html>
